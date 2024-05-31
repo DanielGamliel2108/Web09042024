@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,6 +25,15 @@ namespace BLL
 
         public DateTime ProductDateAdded { get; set; }
 
-       
+        public static List<Product> GetAll()
+        {
+            return ProductDAL.GetAll();
+        }
+        public static Product GetById(int Id)
+        {
+            return ProductDAL.GetById(Id);
+        }
+
+
     }
 }

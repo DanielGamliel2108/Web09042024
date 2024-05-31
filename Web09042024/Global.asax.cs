@@ -7,6 +7,9 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data;//בשביל קורא הנתונים datareader
 using System.Data.SqlClient;//בשביל האובייקטים לעבודה מול בסיס הנתונים
+using System.Configuration; // שימוש בספריית הקונפגורציה של חיבור המחרוזת
+using DATA;
+using System.IO;
 
 namespace Web09042024
 {
@@ -15,7 +18,51 @@ namespace Web09042024
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Product p;//יצירת משתנה ייחוס מסוג מוצר
+            Application["Products"] = Product.GetAll();
+
+            /*Product p;
+            List<Product> LstProd = new List<Product>();
+
+            string ConnStr = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString; // שליפת מחרוזת ההתחברות מתוך קובץ הגדרות האפליקציה / שרת web.config
+            SqlConnection Conn = new SqlConnection(ConnStr); // יצירת אובייקט מסוג צינור והגדרת מחרוזת ההתחברות של הצינור לבסיס הנתונים 
+
+            //Conn.ConnectionString = ConnStr; // הגדרת מחרוזת ההתחברות לאחר יצירת האובייקט, זו אופציה נוספת להגדרה
+
+            Conn.Open(); // פתיחת הצינור לבסיס הנתונים
+
+           string Sql = "SELECT * FROM T_Product";
+
+            SqlCommand Cmd = new SqlCommand(Sql, Conn);
+
+            //Cmd.Connection = Conn;
+            //Cmd.CommandText = Sql;
+
+            SqlDataReader Dr = null;
+
+            Dr = Cmd.ExecuteReader(); // הפעלת השאילתה וקבלת תוצאות השאילתה לתוך אובייקט קורא נתונים 
+
+            while (Dr.Read())
+            {
+                p = new Product()
+                {
+                    ProductCode = int.Parse(Dr["ProductCode"] + ""),
+                    ProductName = Dr["ProductName"] + "",
+                    ProductPrice = float.Parse(Dr["ProductPrice"] + ""),
+                    ProductDescription = Dr["ProductDescription"] + "",
+                    ProductImageName = Dr["ProductImageName"] + "",
+                    ProductCategoryCode = int.Parse(Dr["ProductCategoryCode"] + ""),
+                    ProductStatus = Dr["ProductStatus"] + "",
+                    ProductDateAdded = DateTime.Parse(Dr["ProductDateAdded"] + "")
+                };
+                LstProd.Add(p); // הוספת המוצר לרשימת המוצרים
+            }
+            Application["Products"] = LstProd; // שמירת רשימת המוצרים באפליקשיין
+            
+            Conn.Close();*/
+
+
+            //----------------------///
+            /*Product p;//יצירת משתנה ייחוס מסוג מוצר
             List<Product> LstProd = new List<Product>();//יצירת רשימה של מוצרים
             //הגדרת מחרוזת התחברות לבסיס הנתונים 
             string Connstr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Ecom.mdf;Integrated Security=True;"; 
@@ -43,7 +90,7 @@ namespace Web09042024
                 };
                 LstProd.Add(p);//הוספת המוצר לרשימת המוצרים
             }
-            Application["Products"] = LstProd;//שמירת רשימת המוצרים באפליקיישן
+            Application["Products"] = LstProd;//שמירת רשימת המוצרים באפליקיישן */
 
             List<Client> LstClient = new List<Client>();//הגדרת רשימה עבור לקוחות
 
@@ -106,7 +153,7 @@ namespace Web09042024
             LstClient.Add(Tmp);
             Application["Clients"] = LstClient;//שמירת רשימת הלקוחות בתוך הזכרון מסוג אפליקיישן
 
-            List<City> LstCity = new List<City>();////הגדרת רשימה עבור לקוחות
+            /*List<City> LstCity = new List<City>();////הגדרת רשימה עבור לקוחות
 
             City cty;
             cty = new City()
@@ -172,7 +219,7 @@ namespace Web09042024
             Application["Categories"] = Categories;
 
             //List Of Products
-            /*List<Product> LstProduct = new List<Product>();
+            *//*List<Product> LstProduct = new List<Product>();
             LstProduct.Add(new Product()
             {
                 ProductCode = 1001,
@@ -208,13 +255,8 @@ namespace Web09042024
                 ProductStatus = "In Stock",
                 ProductDateAdded = DateTime.Now
             });
-            Application["Products"] = LstProduct;*/
-            Conn.Close();//סגירת הצינור לבסיס הנתונים
-
-
-
-
-
+            Application["Products"] = LstProduct;*//*
+            Conn.Close();//סגירת הצינור לבסיס הנתונים*/
         }
 
         protected void Session_Start(object sender, EventArgs e)

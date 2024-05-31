@@ -11,52 +11,70 @@ namespace Web09042024.AdminManager
 {
 
 
-    public partial class BackAdmin
+    public partial class ProdAddEdit
     {
 
         /// <summary>
-        /// head control.
+        /// HidPid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.HiddenField HidPid;
 
         /// <summary>
-        /// form1 control.
+        /// TxtPname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox TxtPname;
 
         /// <summary>
-        /// MainCnt control.
+        /// TxtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainCnt;
+        protected global::System.Web.UI.WebControls.TextBox TxtPrice;
 
         /// <summary>
-        /// FooterCnt control.
+        /// TxtPdesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterCnt;
+        protected global::System.Web.UI.WebControls.TextBox TxtPdesc;
 
         /// <summary>
-        /// UnderFooterCnt control.
+        /// ImgPicname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder UnderFooterCnt;
+        protected global::System.Web.UI.WebControls.Image ImgPicname;
+
+        /// <summary>
+        /// UploadPic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload UploadPic;
+
+        /// <summary>
+        /// BtnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSave;
     }
 }

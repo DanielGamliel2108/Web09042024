@@ -19,13 +19,6 @@ namespace Web09042024
 
             List<Client> LstClient = (List<Client>)Application["Clients"];//הגדרת רשימה עבור לקוחות
 
-
-
-
-
-
-
-            LstClient.Add(new Client());//הוספת לקוח לרשימה 
             string Email = TxtEmail.Text;
             string Pass = TxtPass.Text;
             for (int i = 0; i < LstClient.Count; i++)//מעבר על כל רשימת הלקוחות
@@ -36,7 +29,7 @@ namespace Web09042024
                     //ניצור משתנה מסוג סשן ונשמור בתוכו את האובייקט של המשתמש
                     Session["Login"] = LstClient[i];
                     //נעביר את הגולש לעמוד רשימת מוצרים
-                    Response.Redirect("ProductsList.aspx");
+                    Response.Redirect("/AdminManager");
                 }
 
             }

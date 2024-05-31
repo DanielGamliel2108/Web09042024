@@ -11,8 +11,17 @@ namespace Web09042024
 {
 
 
-    public partial class Register1
+    public partial class Register
     {
+
+        /// <summary>
+        /// LtlMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtlMsg;
 
         /// <summary>
         /// TxtFirstName control.
@@ -76,14 +85,5 @@ namespace Web09042024
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button LogIn;
-
-        /// <summary>
-        /// LtlMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtlMsg;
     }
 }

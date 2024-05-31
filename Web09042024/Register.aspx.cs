@@ -8,11 +8,11 @@ using System.Web.UI.WebControls;
 
 namespace Web09042024
 {
-    public partial class Register1 : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)//טעינה ראשונה של העמוד
+            /*if (!IsPostBack)//טעינה ראשונה של העמוד
             {
                 List<City> LstCity = (List<City>)Application["Cities"];//שליפת רשימת הערים מתוך האפליקיישן
 
@@ -25,12 +25,12 @@ namespace Web09042024
                 DDLCity.DataTextField = "CityName";//הגדרת השדה שישמש עבור התצוגה
                 DDLCity.DataValueField = "CityCode";//הגדרת השדה שישמש עבור המפתח של הפריט
                 DDLCity.DataBind();//הכנסת החיבור למקור הנתונים לפעולה
-            }
+            }*/
         }
 
         protected void BtnReg_Click(object sender, EventArgs e)
         {
-            string FirstName = TxtFirstName.Text;
+            /*string FirstName = TxtFirstName.Text;
             string LastName = TxtLastName.Text;
             string Email = TxtEmail.Text;
             string City = DDLCity.SelectedValue;
@@ -75,7 +75,7 @@ namespace Web09042024
                     Response.Redirect("ProductList.aspx");
 
                 }
-            }
+            }*/
         }
 
         protected void BtnRegister_Click(object sender, EventArgs e)

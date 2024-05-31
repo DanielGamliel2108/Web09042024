@@ -15,6 +15,15 @@ namespace Web09042024
     {
 
         /// <summary>
+        /// LtlMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtlMsg;
+
+        /// <summary>
         /// TxtEmail control.
         /// </summary>
         /// <remarks>
@@ -40,14 +49,5 @@ namespace Web09042024
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnLogin;
-
-        /// <summary>
-        /// LtlMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtlMsg;
     }
 }

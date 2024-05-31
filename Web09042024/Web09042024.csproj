@@ -117,6 +117,8 @@
     <Content Include="AdminManager\morris.html" />
     <Content Include="AdminManager\notifications.html" />
     <Content Include="AdminManager\panels-wells.html" />
+    <Content Include="AdminManager\ProdAddEdit.aspx" />
+    <Content Include="AdminManager\ProductList.aspx" />
     <Content Include="AdminManager\tables.html" />
     <Content Include="AdminManager\typography.html" />
     <Content Include="CheckOut.aspx" />
@@ -172,10 +174,30 @@
     <Compile Include="AdminManager\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminManager\ProdAddEdit.aspx.cs">
+      <DependentUpon>ProdAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\ProdAddEdit.aspx.designer.cs">
+      <DependentUpon>ProdAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\BLL\Product.cs" />
     <Compile Include="App_Code\BLL\Client.cs" />
     <Compile Include="App_Code\BLL\Category.cs" />
     <Compile Include="App_Code\BLL\City.cs" />
+    <Compile Include="App_Code\DAL\CategoryDAL.cs" />
+    <Compile Include="App_Code\DAL\ClientDAL.cs" />
+    <Compile Include="App_Code\DAL\CityDAL.cs" />
+    <Compile Include="App_Code\DAL\ProductDAL.cs" />
+    <Compile Include="App_Code\DbContext.cs" />
+    <Compile Include="App_Code\GlobFunc.cs" />
     <Compile Include="CheckOut.aspx.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -299,7 +321,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\DAL\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>

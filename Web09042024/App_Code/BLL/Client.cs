@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,7 @@ namespace BLL
 
         public string ClientCity { get; set; }
         
-        public int ClientPhone { get; set; }
+        public string ClientPhone { get; set; }
 
         public string ClientMail {  get; set; }
 
@@ -26,19 +27,28 @@ namespace BLL
 
         public string ClientDateAdded { get; set; }
 
-        public Client()
+        /*  public Client()
+          {
+              ClientName = "daniel";
+              ClientLastname = "gamliel";
+          }
+
+          public Client(string ClientMail, string ClientPassword)
+          {
+              this.ClientMail = ClientMail;
+              this.ClientPassword = ClientPassword;
+          }*/
+
+        public static List<Client> GetAll()
         {
-            ClientName = "daniel";
-            ClientLastname = "gamliel";
+            return ClientDAL.GetAll();
+        }
+        public static Client GetById(int Id)
+        {
+            return ClientDAL.GetById(Id);
         }
 
-        public Client(string ClientMail, string ClientPassword)
-        {
-            this.ClientMail = ClientMail;
-            this.ClientPassword = ClientPassword;
-        }
-        
 
-        
+
     }
 }
