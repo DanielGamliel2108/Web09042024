@@ -33,6 +33,10 @@ namespace BLL
         {
             return ProductDAL.GetById(Id);
         }
+        public void Save()
+        {
+            ProductDAL.Save(this);
+        }
 
 
     }

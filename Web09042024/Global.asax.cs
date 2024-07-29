@@ -19,6 +19,9 @@ namespace Web09042024
         protected void Application_Start(object sender, EventArgs e)
         {
             Application["Products"] = Product.GetAll();
+            Application["Category"] = Category.GetAll();
+            Application["Clients"] = Client.GetAll();
+            Application["Cities"] = City.GetAll();
 
             /*Product p;
             List<Product> LstProd = new List<Product>();
@@ -92,7 +95,7 @@ namespace Web09042024
             }
             Application["Products"] = LstProd;//שמירת רשימת המוצרים באפליקיישן */
 
-            List<Client> LstClient = new List<Client>();//הגדרת רשימה עבור לקוחות
+           /* List<Client> LstClient = new List<Client>();//הגדרת רשימה עבור לקוחות
 
             Client Tmp;
             Tmp = new Client()
@@ -151,75 +154,10 @@ namespace Web09042024
                 ClientAddress = "yavne"
             };
             LstClient.Add(Tmp);
-            Application["Clients"] = LstClient;//שמירת רשימת הלקוחות בתוך הזכרון מסוג אפליקיישן
+            Application["Clients"] = LstClient;//שמירת רשימת הלקוחות בתוך הזכרון מסוג אפליקיישן*/
 
-            /*List<City> LstCity = new List<City>();////הגדרת רשימה עבור לקוחות
-
-            City cty;
-            cty = new City()
-            {
-                CityName = "Gedera",
-                CityCode = "100",
-            };
-            LstCity.Add(cty);
-
-          
-            cty = new City()
-            {
-                CityName = "Ashkelon",
-                CityCode = "20",
-            };
-            LstCity.Add(cty);
-
-            cty = new City()
-            {
-                CityName = "Ashdod",
-                CityCode = "30",
-            };
-            LstCity.Add(cty);
-            cty = new City()
-            {
-                CityName = "Rehovot",
-                CityCode = "40",
-            };
-            LstCity.Add(cty);
-            cty = new City()
-            {
-                CityName = "petah tikva",
-                CityCode = "50",
-            };
-            LstCity.Add(cty);
-            Application["Cities"] = LstCity;
-
-            //List Of Categories
-            List<Category> Categories = new List<Category>();
-            Categories.Add(new Category()
-            {
-                CategoryCode = 10,
-                CategoryName = "Cars",
-                CategoryDescription = "Best Car you can find",
-                CategoryImageName = "Cars"
-            });
-
-            Categories.Add(new Category()
-            {
-                CategoryCode = 20,
-                CategoryName = "TV",
-                CategoryDescription = "All You Need For comfortable viewing",
-                CategoryImageName = "TV"
-            });
-
-            Categories.Add(new Category()
-            {
-                CategoryCode = 30,
-                CategoryName = "Candles",
-                CategoryDescription = "Candles for your house",
-                CategoryImageName = "Candles"
-            });
-            Application["Categories"] = Categories;
-
-            //List Of Products
-            *//*List<Product> LstProduct = new List<Product>();
+            
+            /*List<Product> LstProduct = new List<Product>();
             LstProduct.Add(new Product()
             {
                 ProductCode = 1001,
@@ -255,7 +193,8 @@ namespace Web09042024
                 ProductStatus = "In Stock",
                 ProductDateAdded = DateTime.Now
             });
-            Application["Products"] = LstProduct;*//*
+            Application["Products"] = LstProduct;*/
+            /*
             Conn.Close();//סגירת הצינור לבסיס הנתונים*/
         }
 

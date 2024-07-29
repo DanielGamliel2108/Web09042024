@@ -11,43 +11,16 @@ namespace Web09042024
 {
 
 
-    public partial class Login1
+    public partial class Login
     {
 
         /// <summary>
-        /// LtlMsg control.
+        /// LoginCube control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtlMsg;
-
-        /// <summary>
-        /// TxtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
-
-        /// <summary>
-        /// TxtPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPass;
-
-        /// <summary>
-        /// BtnLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnLogin;
+        protected global::Web09042024.User_Controls.LoginCube LoginCube;
     }
 }

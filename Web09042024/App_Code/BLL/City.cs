@@ -24,5 +24,9 @@ namespace BLL
         {
             return CityDAL.GetById(Id);
         }
+        public void Save()
+        {
+            CityDAL.Save(this);
+        }
     }
 }

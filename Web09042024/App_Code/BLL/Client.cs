@@ -47,6 +47,10 @@ namespace BLL
         {
             return ClientDAL.GetById(Id);
         }
+        public void Save()
+        {
+            ClientDAL.Save(this);
+        }
 
 
 

@@ -7,7 +7,7 @@ namespace Web09042024
 {
     public class GlobFunc
     {
-        //פונקציה המקבלת מספר ומחזירה מחרוזת המורכבת מתווים אקראאים באורך שקיבלנו
+        //פונקציה המקבלת מספר ומחזירה מחרוזת המורכבת מתווים אקראיים באורך שקיבלנו
         public static string GetRandStr(int length)
         {
             string str = "abcdefgjhijklmnopqrstuvwxyz0123456789";

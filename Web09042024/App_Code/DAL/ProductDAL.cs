@@ -58,6 +58,22 @@ namespace DAL
             Db.Close();
             return Tmp;
         }
+        public static void Save(Product product)
+        {
+            DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
+            string Sql = "";
+            if (product.ProductCode == -1)
+            {
+                Sql = $"INSERT INTO T_Product (ProductName, ProductPrice, ProductDescription, ProductImageName, ProductCategoryCode, ProductDateAdded) VALUES ('{product.ProductName}', {product.ProductPrice}, '{product.ProductDescription}', '{product.ProductImageName}', {product.ProductCategoryCode}, GETDATE())";
+            }
+            else
+            {
+                Sql = $"UPDATE T_Product SET ProductName='{product.ProductName}', ProductPrice={product.ProductPrice}, ProductDescription='{product.ProductDescription}', ProductImageName='{product.ProductImageName}', ProductCategoryCode={product.ProductCategoryCode}, ProductStatus='{product.ProductStatus}' WHERE ProductCode={product.ProductCode}";
+            }
+            DbContext db = new DbContext();
+            Db.ExecuteNonQuery(Sql); // הפעלת השאילתה לביצוע פעולה על בסיס הנתונים
+            
+        }
     }
     
 }

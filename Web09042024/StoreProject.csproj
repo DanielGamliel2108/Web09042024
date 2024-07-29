@@ -69,6 +69,12 @@
   <ItemGroup>
     <Content Include="AdminManager\blank.html" />
     <Content Include="AdminManager\buttons.html" />
+    <Content Include="AdminManager\CategoryAddEdit.aspx" />
+    <Content Include="AdminManager\CategoryList.aspx" />
+    <Content Include="AdminManager\CityAddEdit.aspx" />
+    <Content Include="AdminManager\CityList.aspx" />
+    <Content Include="AdminManager\ClientAddEdit.aspx" />
+    <Content Include="AdminManager\ClientList.aspx" />
     <Content Include="AdminManager\css\font-awesome\font-awesome.min.css" />
     <Content Include="AdminManager\css\ltr\bootstrap.min.css" />
     <Content Include="AdminManager\css\ltr\sb-admin-2.css" />
@@ -81,6 +87,7 @@
     <Content Include="AdminManager\css\rtl\bootstrap.min.css" />
     <Content Include="AdminManager\css\rtl\bootstrap.rtl.css" />
     <Content Include="AdminManager\css\rtl\sb-admin-2.css" />
+    <Content Include="AdminManager\css\style.css" />
     <Content Include="AdminManager\Default.aspx" />
     <Content Include="AdminManager\extras\image-samples\buttons.png" />
     <Content Include="AdminManager\extras\image-samples\tables.png" />
@@ -121,7 +128,11 @@
     <Content Include="AdminManager\ProductList.aspx" />
     <Content Include="AdminManager\tables.html" />
     <Content Include="AdminManager\typography.html" />
+    <Content Include="Cart.aspx" />
+    <Content Include="CategoryList.aspx" />
     <Content Include="CheckOut.aspx" />
+    <Content Include="CityList.aspx" />
+    <Content Include="ClientList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -140,10 +151,14 @@
     <Content Include="css\bootstrap.rtl.css" />
     <Content Include="css\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="image\blackchair.jpeg" />
     <Content Include="image\bread.jpeg" />
+    <Content Include="image\chair.jpeg" />
     <Content Include="image\computer.jpeg" />
     <Content Include="image\milk.jpeg" />
     <Content Include="image\phone.jpeg" />
+    <Content Include="image\pinkchair.jpeg" />
+    <Content Include="image\yellowchair.jpeg" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.esm.js" />
@@ -153,10 +168,12 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="OrderThanks.aspx" />
+    <Content Include="PaymentSuccess.aspx" />
     <Content Include="Prod.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="User-Controls\LoginCube.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +183,48 @@
     </Compile>
     <Compile Include="AdminManager\BackAdmin.Master.designer.cs">
       <DependentUpon>BackAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\CategoryAddEdit.aspx.cs">
+      <DependentUpon>CategoryAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\CategoryAddEdit.aspx.designer.cs">
+      <DependentUpon>CategoryAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\CityAddEdit.aspx.cs">
+      <DependentUpon>CityAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\CityAddEdit.aspx.designer.cs">
+      <DependentUpon>CityAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\CityList.aspx.cs">
+      <DependentUpon>CityList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\CityList.aspx.designer.cs">
+      <DependentUpon>CityList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\ClientAddEdit.aspx.cs">
+      <DependentUpon>ClientAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\ClientAddEdit.aspx.designer.cs">
+      <DependentUpon>ClientAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManager\ClientList.aspx.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManager\ClientList.aspx.designer.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminManager\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -198,12 +257,40 @@
     <Compile Include="App_Code\DAL\ProductDAL.cs" />
     <Compile Include="App_Code\DbContext.cs" />
     <Compile Include="App_Code\GlobFunc.cs" />
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CheckOut.aspx.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CheckOut.aspx.designer.cs">
       <DependentUpon>CheckOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CityList.aspx.cs">
+      <DependentUpon>CityList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CityList.aspx.designer.cs">
+      <DependentUpon>CityList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientList.aspx.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientList.aspx.designer.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -243,6 +330,13 @@
     <Compile Include="OrderThanks.aspx.designer.cs">
       <DependentUpon>OrderThanks.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaymentSuccess.aspx.cs">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentSuccess.aspx.designer.cs">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Prod.aspx.cs">
       <DependentUpon>Prod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -271,6 +365,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User-Controls\LoginCube.ascx.cs">
+      <DependentUpon>LoginCube.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User-Controls\LoginCube.ascx.designer.cs">
+      <DependentUpon>LoginCube.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ namespace DAL
         public static List<Client> GetAll()
         {
             DbContext Db = new DbContext();//יצירת אובייקט מסוג גישת לבסיס הנתונים 
-            string Sql = "SELECT * FROM T_Product";//הגדרת משפט השאילתה
+            string Sql = "SELECT * FROM T_Client";//הגדרת משפט השאילתה
             DataTable Dt = Db.Execute(Sql);//הפעלת השאילתה ורבלת התוצאות לתוך טבלת נתונים
 
             //נעבור על כל הנתונים שחזרו ונכניס לתוך רשימה של מוצרים
@@ -63,5 +63,22 @@ namespace DAL
             Db.Close();
             return Tmp;
         }
+        public static void Save(Client client)
+        {
+            DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
+            string Sql = "";
+            if (client.ClientID == -1)
+            {
+                Sql = $"INSERT INTO T_Client (ClientName, ClientLastname, ClientAddress, ClientCity, ClientPhone, ClientMail, ClientPassword) VALUES ('{client.ClientName}', '{client.ClientLastname}', '{client.ClientAddress}', '{client.ClientCity}', '{client.ClientPhone}','{client.ClientMail}','{client.ClientPassword}')";
+            }
+            else
+            {
+                Sql = $"UPDATE T_Client SET ClientName='{client.ClientName}', ClientLastname={client.ClientLastname}, ClientAddress='{client.ClientAddress}', ClientCity='{client.ClientCity}', ClientPhone={client.ClientPhone}, ClientMail='{client.ClientMail}' ClientPassword={client.ClientPassword}";
+            }
+            DbContext db = new DbContext();
+            Db.ExecuteNonQuery(Sql); // הפעלת השאילתה לביצוע פעולה על בסיס הנתונים
+
+        }
+
     }
 }

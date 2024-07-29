@@ -51,5 +51,21 @@ namespace DAL
             Db.Close();
             return Tmp;
         }
+        public static void Save(City city)
+        {
+            DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
+            string Sql = "";
+            if (city.CityCode == -1)
+            {
+                Sql = $"INSERT INTO T_City (CityName, CityDateAdded) VALUES ('{city.CityName}', GETDATE())";
+            }
+            else
+            {
+                Sql = $"UPDATE T_City SET CityName='{city.CityName}', CityStatus='{city.CityStatus}' WHERE CityCode={city.CityCode}";
+            }
+            DbContext db = new DbContext();
+            Db.ExecuteNonQuery(Sql); // הפעלת השאילתה לביצוע פעולה על בסיס הנתונים
+        }
+
     }
 }

@@ -17,7 +17,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        DataTables Advanced Tables
+                        רשימת מוצרים
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -64,7 +64,6 @@
     <script src="js/jquery/jquery.dataTables.min.js"></script>
     <script src="js/bootstrap/dataTables.bootstrap.min.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <!-- הערה להסתכל בסרטון -->
     <script>
         $(document).ready(function () {
             $('#MainTbl').dataTable({
@@ -74,7 +73,4 @@
             });
         });
     </script>
-</asp:Content>
-
-<asp:Content ID="Content4" ContentPlaceHolderID="UnderFooterCnt" runat="server">
 </asp:Content>

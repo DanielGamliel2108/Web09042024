@@ -12,20 +12,19 @@ namespace Web09042024.AdminManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) // מדובר בטעינה ראשונה של העמוד
+            if (!IsPostBack)
             {
-                // נשלוף את רשימת המוצרים מתוך האפליקשיין
-                // נקשר את רשימת המוצרים לפקד רפיטר
-                // נבצע קשירה של הנתונים לפקד הריפטר באמצעות הפעלת הפונקציה
-                // Bind()
                 List<Product> LstProd;
                 LstProd = (List<Product>)Application["Products"];
-
-                // קישור רשימת המוצרים עם הריפטר
                 RptProd.DataSource = LstProd;
-                // עבור כל פריט במקור הנתונים , יתבצע שכפול של האייטם טמפלייט של הרשיפטר
-                RptProd.DataBind(); //  קשירת הנתונים לריפטר 
+                RptProd.DataBind();
             }
+        }
+
+        internal class CartItem
+        {
+            public int Quantity { get; internal set; }
+            public int Price { get; internal set; }
         }
     }
 }

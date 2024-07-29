@@ -23,7 +23,7 @@ namespace DAL
             {
                 Category Tmp = new Category()
                 {
-                    CategoryCode = int.Parse(Dt.Rows[i]["CategoryCode"] + ""),
+                    Cid = int.Parse(Dt.Rows[i]["Cid"] + ""),
                     CategoryName = Dt.Rows[i]["CategoryName"] + "",
                     CategoryDescription = Dt.Rows[i]["CategoryDescription"] + "",
                     CategoryImageName = Dt.Rows[i]["CategoryImageName"] + "",
@@ -38,7 +38,7 @@ namespace DAL
         public static Category GetById(int Id)
         {
             DbContext Db = new DbContext();//יצירת אובייקט מסוג גישת לבסיס הנתונים 
-            string Sql = $"SELECT * FROM T_Category WHERE CategoryCode ={Id}";//הגדרת משפט השאילתה
+            string Sql = $"SELECT * FROM T_Category WHERE Cid ={Id}";//הגדרת משפט השאילתה
             DataTable Dt = Db.Execute(Sql);//הפעלת השאילתה ורבלת התוצאות לתוך טבלת נתונים
                                            //נעבור על כל הנתונים שחזרו ונכניס לתוך רשימה של מוצרים
             Category Tmp = null;
@@ -46,7 +46,7 @@ namespace DAL
             {
                 Tmp = new Category()
                 {
-                    CategoryCode = int.Parse(Dt.Rows[0]["CategoryCode"] + ""),
+                    Cid = int.Parse(Dt.Rows[0]["Cid"] + ""),
                     CategoryName = Dt.Rows[0]["CategoryName"] + "",
                     CategoryDescription = Dt.Rows[0]["CategoryDescription"] + "",
                     CategoryImageName = Dt.Rows[0]["CategoryImageName"] + "",
@@ -57,5 +57,21 @@ namespace DAL
             Db.Close();
             return Tmp;
         }
+        public static void Save(Category category)
+        {
+            DbContext Db = new DbContext(); // יצירת אובייקט מסוג גישה לבסיס הנתונים
+            string Sql = "";
+            if (category.Cid == -1)
+            {
+                Sql = $"INSERT INTO T_Category (CategoryName, CategoryDescription, CategoryImageName, AvCategoryCode, DateAdded) VALUES ('{category.CategoryName}', '{category.CategoryDescription}', '{category.CategoryImageName}', {category.AvCategoryCode}, GETDATE())";
+            }
+            else
+            {
+                Sql = $"UPDATE T_Category SET CategoryName='{category.CategoryName}', CategoryDescription='{category.CategoryDescription}', CategoryImageName='{category.CategoryImageName}', AvCategoryCode={category.AvCategoryCode} WHERE Cid={category.Cid}";
+            }
+            DbContext db = new DbContext();
+            Db.ExecuteNonQuery(Sql); // הפעלת השאילתה לביצוע פעולה על בסיס הנתונים
+        }
+
     }
 }

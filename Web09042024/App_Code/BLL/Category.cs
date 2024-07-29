@@ -9,7 +9,7 @@ namespace BLL
     public class Category
     {
         
-        public int CategoryCode { get; set; }
+        public int Cid { get; set; }
 
         public string CategoryName { get; set; }
 
@@ -30,6 +30,10 @@ namespace BLL
         public static Category GetById(int Id)
         {
             return CategoryDAL.GetById(Id);
+        }
+        public void Save()
+        {
+            CategoryDAL.Save(this);
         }
 
 
